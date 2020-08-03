@@ -5,7 +5,7 @@ const TicTacToe = () => {
     return (
         <View>
           <Text>Open up TicTacToe.js to start working on your game!</Text>
-          </View>
+        </View>
     )
 }
 
