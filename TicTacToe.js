@@ -1,6 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
+const Square = () => {
+  return (
+    <button className="square">
+      {/* TODO */}
+    </button>
+  );
+}
+
 const TicTacToe = () => {
     return (
         <View>
@@ -10,3 +18,4 @@ const TicTacToe = () => {
 }
 
 export default TicTacToe
+
