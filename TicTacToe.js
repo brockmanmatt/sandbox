@@ -14,7 +14,7 @@ const Board = i => {
 
   return (
     <View>
-      <View className="status">{status}</View>
+      <View className="status"><Text>{status}</Text></View>
       <View className="board-row">
         <Square id='0'></Square>
         <Square id='1'></Square>
@@ -37,7 +37,7 @@ const Board = i => {
 const TicTacToe = () => {
     return (
         <View>
-          <Text>Open up TicTacToe.js to start working on your game!</Text>
+          <Board />
         </View>
     )
 }
