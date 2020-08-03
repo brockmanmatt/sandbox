@@ -5,7 +5,7 @@ const Life = () => {
     return (
         <View>
           <Text>Open up Life.js to start working on your game!</Text>
-          </View>
+        </View>
     )
 }
 
