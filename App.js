@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TicTacToe from './TicTacToe.js'
+import Life from './Life.js'
 
 const TicTacToeScreen = () => {
   return (
@@ -15,7 +16,7 @@ const TicTacToeScreen = () => {
 const LifeScreen = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Life!</Text>
+      <Life></Life>
     </View>
   )
 }
