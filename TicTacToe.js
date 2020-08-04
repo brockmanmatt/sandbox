@@ -1,13 +1,16 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import Box from "./TicTacToe/Box";
 
 const TicTacToe = () => {
 
-  const gameState = React.useState([[0,0,0], [0,0,0], [0,0,0]]);
+  const [gameState, setGameState] = React.useState([[0,0,0], [0,0,0], [0,0,0]]);
 
   const displayBoard = () => {
     return gameState.map((row) => {
-      return <View>{row[0]}</View>
+      return row.map((column) => {
+        return <Box boxState={column}/>
+      })
     })
   }
 
