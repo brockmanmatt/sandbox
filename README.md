@@ -8,6 +8,7 @@ Before you run anything in sandbox be sure that you already have [node installed
 Take the following steps to get the app running on your local machine.
 
 * Once you have cloned the repo, navigate to the `sandbox` folder.
+* Create a new branch by running `git checkout -b <your name>`
 * Next run the `npm install -g expo-cli` command
 * Then run `npm install` to install the packages for the app
 * From here you should be able to run `npm run start` to start the app
