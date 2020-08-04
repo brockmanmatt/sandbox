@@ -2,12 +2,24 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import Box from "./TicTacToe/Box";
 
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
 const TicTacToe = () => {
 
-  const [gameState, setGameState] = React.useState([[0,2,0], [0,0,0], [0,0,0]]);
+
+  const [gameState, dispatch] = React.useReducer(reducer, {currentPlayer: "one", boardState: [[0,0,0], [0,0,0], [0,0,0]] })
 
   const displayBoard = () => {
-    return gameState.map((row, index) => {
+    return gameState.boardState.map((row, index) => {
       return <View key={index} style={{flexDirection: "row"}}>
         {displayRow(row)}
       </View>;
