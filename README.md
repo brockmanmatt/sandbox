@@ -12,6 +12,7 @@ Take the following steps to get the app running on your local machine.
 * Next run the `npm install -g expo-cli` command
 * Then run `npm install` to install the packages for the app
 * From here you should be able to run `npm run start` to start the app
+* We recommend using the browser for testing your expo App, press `w` in the terminal to open load the browser version. (Optionally you can test the app on mobile)
 
 ## Tips
 * Remember to use small commits `git add *; git commit -m "<your commit message>"; git push`
