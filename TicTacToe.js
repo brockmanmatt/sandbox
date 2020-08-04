@@ -4,11 +4,11 @@ import Box from "./TicTacToe/Box";
 
 const TicTacToe = () => {
 
-  const [gameState, setGameState] = React.useState([[0,0,0], [0,0,0], [0,0,0]]);
+  const [gameState, setGameState] = React.useState([[0,2,0], [0,0,0], [0,0,0]]);
 
   const displayBoard = () => {
     return gameState.map((row, index) => {
-      return <View key={index}>
+      return <View key={index} style={{flexDirection: "row"}}>
         {displayRow(row)}
       </View>;
     })
@@ -23,7 +23,9 @@ const TicTacToe = () => {
     return (
       <View>
         <Text>Open up TicTacToe.js to start working on your game!</Text>
-        <View>{displayBoard()}</View>
+        <View>
+          {displayBoard()}
+        </View>
       </View>
     )
 }
