@@ -1,13 +1,15 @@
 import { CellNeighbors } from "../types/CellNeighbors";
 import { Location } from "../types/Location";
 
+const TOTAL_NEIGHBORS = 8;
+
 export default function rules(grid: boolean[][]): boolean[][] {
   return grid.map((row: boolean[], x: number) => {
     return row.map((cell: boolean, y: number) => {
       const alive = getAliveNeighborsCount({ x, y }, grid);
       const surroundings: CellNeighbors = {
         alive,
-        dead: 9 - alive,
+        dead: TOTAL_NEIGHBORS - alive,
       };
       return true;
       // return handleCellState(cell, surroundings);
@@ -32,20 +34,7 @@ function getAliveNeighborsCount(location: Location, grid: boolean[][]): number {
       }
     }
   }
-  console.log(cellArray);
-
-  // const neighbors = [
-  //   grid[location.x - 1][location.y - 1], // top left
-  //   grid[location.x][location.y - 1], // top middle
-  //   grid[location.x + 1][location.y - 1], // top right
-  //   grid[location.x - 1][location.y], // left
-  //   grid[location.x + 1][location.y], // right
-  //   grid[location.x - 1][location.y + 1], // bottom left
-  //   grid[location.x][location.y + 1], // bottom middle
-  //   grid[location.x + 1][location.y + 1], // bottom right
-  // ];
-  // console.log(neighbors);
-  return 5;
+  return cellArray.filter((cell) => cell).length;
 }
 
 // function handleCellState(cell: boolean, surroundings): boolean {}
