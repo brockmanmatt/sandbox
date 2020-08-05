@@ -33,6 +33,7 @@ function getAliveNeighborsCount(location: Location, grid: boolean[][]): number {
       }
     }
   }
+  // filter out dead, and count alive
   return cellArray.filter((cell) => cell).length;
 }
 

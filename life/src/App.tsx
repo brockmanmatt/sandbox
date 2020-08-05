@@ -1,13 +1,12 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "./App.css";
 
-import initialState from "./data/initialState";
-import lifeReducer from "./data/reducer";
 import GridRow from "./components/GridRow";
 import applyRules from "./data/rules";
+import { LifeContext } from "./data/store";
 
 function App() {
-  const [lifeState, dispatch] = useReducer(lifeReducer, initialState);
+  const { lifeState, dispatch } = useContext(LifeContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +21,12 @@ function App() {
     return lifeState.grid.map((row, i) => <GridRow key={i} {...{ row }} />);
   };
 
-  return <div className="App">{displayLife()}</div>;
+  return (
+    <div className="App">
+      <div className="options"></div>
+      <div className="grid">{displayLife()}</div>
+    </div>
+  );
 }
 
 export default App;

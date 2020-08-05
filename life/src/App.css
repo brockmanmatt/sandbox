@@ -1,4 +1,12 @@
 .App {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
+}
+
+.options {
+  flex: 1;
+}
+
+.grid {
+  flex: 3;
 }
