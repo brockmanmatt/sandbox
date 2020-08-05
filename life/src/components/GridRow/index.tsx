@@ -10,7 +10,7 @@ function GridRow({ row }: IProps) {
   const displayCells = () => {
     return row.map((cell, i) => <Cell key={i} cellState={cell} />);
   };
-  return <>{displayCells()}</>;
+  return <div className="grid-row">{displayCells()}</div>;
 }
 
 export default GridRow;
