@@ -1,5 +1,5 @@
 # Sandbox
-The sandbox is used as a simple environment that is set up for developers to start up a small react project easily. Please do not make any changes on this repo unless it will be a default for the sandbox. If interviewing please create your own branch, submit your branch when finished and please avoid squashing your commits. 
+The sandbox is used as a simple environment that is set up for developers to start up a small react project easily. Please do not make any changes on this repo unless it will be a default for the sandbox. If interviewing please make a fork of the repo and create a branch, create a pull request when finished and please avoid squashing your commits. 
 
 ## Requirements
 Before you run anything in sandbox be sure that you already have [node installed](https://nodejs.org/en/download/) on your system.
