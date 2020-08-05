@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import initialState from "./data/initialState";
+import lifeReducer from "./data/reducer";
+import { LifeState } from './types/LifeState';
+
 function App() {
+
+  const [ lifeState, dispatch ] = useReducer(lifeReducer, initialState)
+
   return (
     <div className="App">
       <header className="App-header">
