@@ -1,10 +1,7 @@
 .App {
   display: flex;
   flex-flow: row nowrap;
-}
-
-.options {
-  flex: 1;
+  padding: 50px 30px;
 }
 
 .grid {

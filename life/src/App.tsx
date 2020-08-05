@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import "./App.css";
-
 import GridRow from "./components/GridRow";
 import applyRules from "./data/rules";
 import { LifeContext } from "./data/store";
+import Options from "./components/Options";
 
 function App() {
   const { lifeState, dispatch } = useContext(LifeContext);
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="options"></div>
+      <Options />
       <div className="grid">{displayLife()}</div>
     </div>
   );
