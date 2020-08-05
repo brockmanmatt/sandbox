@@ -20,7 +20,7 @@ function Options() {
         />
       </div>
       <div>
-        <label>Time Speed(ms)</label>
+        <label>Time Per Tick(ms)</label>
         <input
           type="number"
           min={100}

@@ -19,7 +19,7 @@ function App() {
       }
     }, lifeState.speed);
     return () => clearInterval(interval);
-  }, [lifeState]);
+  }, [lifeState, dispatch]);
 
   const displayLife = () => {
     return lifeState.grid.map((row, x) => <GridRow key={x} {...{ row, x }} />);
