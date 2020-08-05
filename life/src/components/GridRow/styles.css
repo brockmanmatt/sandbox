@@ -1,4 +1,6 @@
 .grid-row {
   display: flex;
+  flex: 1;
   flex-flow: row nowrap;
+  align-items: flex-start;
 }

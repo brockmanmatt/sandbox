@@ -19,7 +19,7 @@ function App() {
   }, [lifeState]);
 
   const displayLife = () => {
-    return lifeState.grid.map((row, i) => <GridRow key={i} {...{ row }} />);
+    return lifeState.grid.map((row, x) => <GridRow key={x} {...{ row, x }} />);
   };
 
   return (

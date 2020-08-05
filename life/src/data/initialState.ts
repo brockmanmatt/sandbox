@@ -1,13 +1,8 @@
 import { LifeState } from "../types/LifeState";
+import generateGrid from "../utilities/generateGrid";
 
 const initialState: LifeState = {
-  grid: [
-    [true, true, false, false, false],
-    [true, false, false, false, false],
-    [true, true, true, true, false],
-    [false, false, true, false, false],
-    [false, true, false, false, false],
-  ],
+  grid: generateGrid(25),
   speed: 1000,
   playing: true,
 };
