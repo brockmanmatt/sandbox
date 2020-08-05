@@ -4,13 +4,14 @@ import "./App.css";
 import initialState from "./data/initialState";
 import lifeReducer from "./data/reducer";
 import GridRow from "./components/GridRow";
+import applyRules from "./data/rules";
 
 function App() {
   const [lifeState, dispatch] = useReducer(lifeReducer, initialState);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log("This will run every second!");
+      applyRules(lifeState.grid);
     }, lifeState.speed);
     return () => clearInterval(interval);
   }, []);
