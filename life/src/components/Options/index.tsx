@@ -11,7 +11,8 @@ function Options() {
         <label>Row/Col length</label>
         <input
           type="number"
-          min={5}
+          min={1}
+          max={100}
           value={lifeState.grid[0].length}
           onChange={(e) => {
             // console.log(e.target.value);
@@ -20,7 +21,7 @@ function Options() {
         />
       </div>
       <div>
-        <label>Time Per Tick(ms)</label>
+        <label>Approx Time Per Tick(ms)</label>
         <input
           type="number"
           min={100}
@@ -46,7 +47,7 @@ function Options() {
       <h3>Directions</h3>
       <ul>
         <li>Click on the cells to make them alive(pause if needed).</li>
-        <li>Row and col min length is 5 cells</li>
+        <li>Row and col min length is 1 cell and max is 100</li>
         <li>Speed min is 100ms (.1 seconds)</li>
       </ul>
     </div>

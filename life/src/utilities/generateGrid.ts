@@ -1,7 +1,7 @@
 import initialState from "../data/initialState";
 
 export default function generateGrid(rowsAndColumns: number) {
-  if (rowsAndColumns && rowsAndColumns >= 5) {
+  if (rowsAndColumns && rowsAndColumns >= 1 && rowsAndColumns <= 100) {
     const newGrid = [];
     let i;
     for (i = 0; i < rowsAndColumns; i++) {
