@@ -12,7 +12,10 @@ function App() {
     const interval = setInterval(() => {
       if (lifeState.playing) {
         const nextGridState = applyRules(lifeState.grid);
-        dispatch({ type: "update", payload: { ...lifeState, grid: nextGridState } });
+        dispatch({
+          type: "update",
+          payload: { ...lifeState, grid: nextGridState, numberOfTicks: lifeState.numberOfTicks + 1 },
+        });
       }
     }, lifeState.speed);
     return () => clearInterval(interval);

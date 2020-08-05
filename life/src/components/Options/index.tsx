@@ -5,7 +5,6 @@ import generateGrid from "../../utilities/generateGrid";
 
 function Options() {
   const { lifeState, dispatch } = useContext(LifeContext);
-  console.log(lifeState);
   return (
     <div className="options">
       <div>
@@ -24,13 +23,18 @@ function Options() {
         <label>Time Speed(ms)</label>
         <input
           type="number"
-          min={5}
+          min={100}
           value={lifeState.speed}
           onChange={(e) => {
-            dispatch({ type: "update", payload: { ...lifeState, speed: parseInt(e.target.value) } });
+            dispatch({
+              type: "update",
+              payload: { ...lifeState, speed: parseInt(e.target.value) < 100 ? 100 : parseInt(e.target.value) },
+            });
           }}
         />
       </div>
+      <label>Number of Ticks: </label>
+      <span>{lifeState.numberOfTicks}</span>
       <div>
         <button className="button" onClick={() => dispatch({ type: "toggle-play", payload: {} })}>
           {lifeState.playing ? "Pause" : "Play"}
@@ -39,6 +43,12 @@ function Options() {
           Reset
         </button>
       </div>
+      <h3>Directions</h3>
+      <ul>
+        <li>Click on the cells to make them alive(pause if needed).</li>
+        <li>Row and col min length is 5 cells</li>
+        <li>Speed min is 100ms (.1 seconds)</li>
+      </ul>
     </div>
   );
 }
