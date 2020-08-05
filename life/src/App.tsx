@@ -8,7 +8,7 @@ function App() {
   const [lifeState, dispatch] = useReducer(lifeReducer, initialState);
 
   const displayLife = () => {
-    return lifeState.grid.map(x => {
+    return lifeState.grid.map((x) => {
       return <div>here</div>;
     });
   };
