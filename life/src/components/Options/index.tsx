@@ -9,7 +9,7 @@ function Options() {
   return (
     <div className="options">
       <div>
-        <label>Row/Column length</label>
+        <label>Row/Col length</label>
         <input
           type="number"
           min={5}
@@ -21,10 +21,23 @@ function Options() {
         />
       </div>
       <div>
-        <button onClick={() => dispatch({ type: "toggle-play", payload: {} })}>
+        <label>Time Speed(ms)</label>
+        <input
+          type="number"
+          min={5}
+          value={lifeState.speed}
+          onChange={(e) => {
+            dispatch({ type: "update", payload: { ...lifeState, speed: parseInt(e.target.value) } });
+          }}
+        />
+      </div>
+      <div>
+        <button className="button" onClick={() => dispatch({ type: "toggle-play", payload: {} })}>
           {lifeState.playing ? "Pause" : "Play"}
         </button>
-        <button onClick={() => dispatch({ type: "reset", payload: {} })}>Reset</button>
+        <button className="button" onClick={() => dispatch({ type: "reset", payload: {} })}>
+          Reset
+        </button>
       </div>
     </div>
   );

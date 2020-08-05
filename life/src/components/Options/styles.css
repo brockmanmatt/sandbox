@@ -4,3 +4,15 @@
   flex-flow: column nowrap;
   align-items: flex-start;
 }
+
+.button {
+  margin-right: 10px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  margin-bottom: 10px;
+}
