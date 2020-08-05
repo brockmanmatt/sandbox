@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setting up
+
+* Run `yarn` to install necessary deps
+* then `yarn start` to start the app
 
 ## Available Scripts
 
