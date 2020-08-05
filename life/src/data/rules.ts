@@ -21,11 +21,14 @@ function getAliveNeighborsCount(location: Location, grid: boolean[][]): number {
   let y;
   for (x = location.x - 1; x < location.x + 2; x++) {
     for (y = location.y - 1; y < location.y + 2; y++) {
-      // if location is out of grid scope treat it as dead
-      if (grid[x] === undefined || grid[x][y] === undefined) {
-        cellArray.push(false);
-      } else {
-        cellArray.push(grid[x][y]);
+      // skip for current location
+      if (!(x === location.x && y === location.y)) {
+        // if location is out of matrix scope treat it as dead
+        if (grid[x] === undefined || grid[x][y] === undefined) {
+          cellArray.push(false);
+        } else {
+          cellArray.push(grid[x][y]);
+        }
       }
     }
   }
