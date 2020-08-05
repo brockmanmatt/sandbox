@@ -2,11 +2,11 @@ import { LifeState } from "../types/LifeState";
 
 const initialState: LifeState = {
   grid: [
-    [true, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false],
+    [true, true, false, false, false],
+    [true, true, false, false, false],
+    [true, true, true, true, false],
+    [false, false, true, false, false],
+    [false, true, false, false, false],
   ],
   speed: 1000,
 };

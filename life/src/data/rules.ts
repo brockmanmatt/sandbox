@@ -37,11 +37,20 @@ function getAliveNeighborsCount(location: Location, grid: boolean[][]): number {
 }
 
 function handleCellState(cell: boolean, surroundings: CellNeighbors): boolean {
-  // if alive
+  // if currently alive
   if (cell) {
+    // under populated or over populated.
     if (surroundings.alive < 2 || surroundings.alive > 3) {
       // ya ded.
       return false;
     }
+    // survived
+    return true;
   }
+  // if dead and has exactly 3 neighbors
+  if (surroundings.alive === 3) {
+    return true;
+  }
+  // else stay dead.
+  return false;
 }

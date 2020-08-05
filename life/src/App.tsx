@@ -11,7 +11,10 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      applyRules(lifeState.grid);
+      const nextGridState = applyRules(lifeState.grid);
+      console.log("tick");
+      console.log(lifeState);
+      dispatch({ type: "update", payload: { ...lifeState, grid: nextGridState } });
     }, lifeState.speed);
     return () => clearInterval(interval);
   }, []);
