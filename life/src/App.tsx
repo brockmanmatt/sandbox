@@ -12,12 +12,11 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       const nextGridState = applyRules(lifeState.grid);
-      console.log("tick");
       console.log(lifeState);
       dispatch({ type: "update", payload: { ...lifeState, grid: nextGridState } });
     }, lifeState.speed);
     return () => clearInterval(interval);
-  }, []);
+  }, [lifeState]);
 
   const displayLife = () => {
     return lifeState.grid.map((row, i) => <GridRow key={i} {...{ row }} />);
