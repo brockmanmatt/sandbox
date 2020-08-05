@@ -10,9 +10,10 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextGridState = applyRules(lifeState.grid);
-      console.log(lifeState);
-      dispatch({ type: "update", payload: { ...lifeState, grid: nextGridState } });
+      if (lifeState.playing) {
+        const nextGridState = applyRules(lifeState.grid);
+        dispatch({ type: "update", payload: { ...lifeState, grid: nextGridState } });
+      }
     }, lifeState.speed);
     return () => clearInterval(interval);
   }, [lifeState]);

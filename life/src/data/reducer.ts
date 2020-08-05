@@ -8,6 +8,9 @@ export default function reducer(state: LifeState, action: LifeStateAction) {
     case "reset": {
       return initialState;
     }
+    case "toggle-play": {
+      return { ...state, playing: !state.playing };
+    }
     default:
       throw new Error();
   }

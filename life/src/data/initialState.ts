@@ -9,6 +9,7 @@ const initialState: LifeState = {
     [false, true, false, false, false],
   ],
   speed: 1000,
+  playing: true,
 };
 
 export default initialState;
