@@ -10,7 +10,16 @@ interface IProps {
 
 function Cell({ cell, location }: IProps) {
   const { lifeState, dispatch } = useContext(LifeContext);
-  return <div className={`cell ${cell ? "alive" : "dead"}`} onClick={() => dispatch}></div>;
+  return (
+    <div
+      className={`cell ${cell ? "alive" : "dead"}`}
+      onClick={() => {
+        const newGrid = lifeState.grid.map((i) => i.slice()); // avoid mutations
+        newGrid[location.x][location.y] = !newGrid[location.x][location.y];
+        dispatch({ type: "update", payload: { ...lifeState, grid: newGrid } });
+      }}
+    ></div>
+  );
 }
 
 export default Cell;
