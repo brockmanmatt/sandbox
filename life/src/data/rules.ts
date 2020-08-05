@@ -11,8 +11,7 @@ export default function rules(grid: boolean[][]): boolean[][] {
         alive,
         dead: TOTAL_NEIGHBORS - alive,
       };
-      return true;
-      // return handleCellState(cell, surroundings);
+      return handleCellState(cell, surroundings);
     });
   });
 }
@@ -37,4 +36,12 @@ function getAliveNeighborsCount(location: Location, grid: boolean[][]): number {
   return cellArray.filter((cell) => cell).length;
 }
 
-// function handleCellState(cell: boolean, surroundings): boolean {}
+function handleCellState(cell: boolean, surroundings: CellNeighbors): boolean {
+  // if alive
+  if (cell) {
+    if (surroundings.alive < 2 || surroundings.alive > 3) {
+      // ya ded.
+      return false;
+    }
+  }
+}
