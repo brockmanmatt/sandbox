@@ -1,7 +1,9 @@
-import { LifeState } from "../types/LifeState";
+export default function rules(grid: boolean[][]) {
+  const newState = grid.map((gridRow: boolean[]) => {
+    return gridRow.map((cell: boolean) => {
+      return handleCellState(cell);
+    });
+  });
+}
 
-// export default function rules(lifeState: LifeState) {
-
-// }
-
-// function
+function handleCellState(cell: boolean) {}
