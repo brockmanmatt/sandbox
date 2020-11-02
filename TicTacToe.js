@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { useState } from 'react';
 import { render } from 'react-dom';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 /*
 * Visually represent the grid
@@ -24,21 +25,24 @@ import { render } from 'react-dom';
 
 
 
-const Square = () =>{
+const Square = (idx) =>{
   //This'll hold each square data (either O or X or null)
-
+  return <TouchableOpacity><Text>{idx}</Text></TouchableOpacity>
 }
 
 const Board = () => {
+
+  const defaultBoard = ["H", 2, 3, 4, 5, 6, 7, 8, 9];
+
   //This'll have my squares
   const [
     mySquares,
     setMySquares,
-  ] = useState([1, null, null, null, null, null, null, null, null])
+  ] = useState(defaultBoard)
 
   //setMySquares;
 
-    return mySquares
+    return mySquares.map(Square)
 
 }
 
