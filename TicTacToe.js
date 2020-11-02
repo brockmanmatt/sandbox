@@ -24,15 +24,19 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 */
 
 
-
 const Square = (idx) =>{
+  const [
+    myOwner,
+    setMyOwner,
+  ] = useState(" ")
+
   //This'll hold each square data (either O or X or null)
-  return <TouchableOpacity><Text>{idx}</Text></TouchableOpacity>
+  return <TouchableOpacity onPress={()=> setMySquares(idx)} style={{height:30, width:30,  backgroundColor:"white", fontColor:'white'}}><Text>{idx}</Text></TouchableOpacity>
 }
 
 const Board = () => {
 
-  const defaultBoard = ["H", 2, 3, 4, 5, 6, 7, 8, 9];
+  const defaultBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
   //This'll have my squares
   const [
@@ -41,8 +45,7 @@ const Board = () => {
   ] = useState(defaultBoard)
 
   //setMySquares;
-
-    return mySquares.map(Square)
+  return mySquares.map(Square)
 
 }
 
