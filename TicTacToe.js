@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-
+import { useState } from 'react';
+import { render } from 'react-dom';
 
 /*
 * Visually represent the grid
@@ -21,15 +22,30 @@ import { Text, View } from 'react-native';
 - easy eenough
 */
 
+
+
+const Square = () =>{
+  //This'll hold each square data (either O or X or null)
+
+}
+
 const Board = () => {
   //This'll have my squares
-  
+  const [
+    mySquares,
+    setMySquares,
+  ] = useState([1, null, null, null, null, null, null, null, null])
+
+  //setMySquares;
+
+    return mySquares
+
 }
 
 const TicTacToe = () => {
     return (
       <View>
-        <Text>Open up TicTacToe.js to start working on your game! 2</Text>
+        <Board />
       </View>
     )
 }
